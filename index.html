@@ -831,7 +831,7 @@ font-size: 14px;
 
         // حساب النسب المئوية للتغير
         document.addEventListener('DOMContentLoaded', function() {
-            const realOilChangePercent = ((oilGoldGrams[oilGoldGrams.length-1] - oilGoldGrams[0]) / oilGoldGrams[0] * 100).toFixed(1);
+            const realOilChangePercent = ((oilGoldGramsValues[oilGoldGramsValues.length-1] - oilGoldGramsValues[0]) / oilGoldGramsValues[0] * 100).toFixed(1);
             document.getElementById('oilChange').textContent = realOilChangePercent + '%';
             
             const usIncomeChangePercent = ((0.12 - 5.78) / 5.78 * 100).toFixed(1);
@@ -1053,7 +1053,7 @@ font-size: 14px;
             const csvContent = "data:text/csv;charset=utf-8,"
                 + headers.join(",") + "\n"
                 + years.map((year, i) =>
-                    `${year},${oilUSD[i]},${goldPriceUSD[i]},${oilGoldGrams[i]},${usAnnualIncomeGold[i]},${(usIncomeGoldPerDayScaled[i].y * 10).toFixed(2)},${usIncomeGoldPerDayScaled[i].y},${compressedUSD[i]}`
+                    `${year},${oilUSD[i]},${goldPriceUSD[i]},${oilGoldGramsValues[i]},${usAnnualIncomeGold[i]},${(usIncomeGoldPerDayScaled[i].y * 10).toFixed(2)},${usIncomeGoldPerDayScaled[i].y},${compressedUSDValues[i]}`
                 ).join("\n");
             
             const encodedUri = encodeURI(csvContent);
